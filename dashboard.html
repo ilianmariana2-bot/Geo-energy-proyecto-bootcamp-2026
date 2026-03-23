@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"><!--Define la codificacion de caracteres-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Hace que el sitio sea responsivo en dispositivos moviles-->
+        <meta name="description" content="Sitio web sobre energia geotermica"><!--Descripcion del sitio web-->
+        <link rel="icon" href="../../assets/img/volcano.svg" type="image/png"><!--Icono de la pestaña del navegador-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"><!--Enlace a la hoja de estilos de Bootstrap-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-p6Oa2... (omit) ..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../assets/styles/style.css"><!--Enlace a la hoja de estilos CSS (carga después de Bootstrap) -->
+        <link rel="stylesheet" href="../../assets/styles/header.css"><!--Enlace a la hoja de estilos CSS para el header-->
+        <link rel="stylesheet" href="../../assets/styles/toggle.css"><!--Enlace a la hoja de estilos CSS para el toggle-->
+        <link rel="stylesheet" href="../../assets/styles/footer.css"><!--Enlace a la hoja de estilos CSS para el footer-->
+        <link rel="stylesheet" href="../../assets/styles/dashboard.css"><!--Enlace a la hoja de estilos CSS para el dashboard-->
+        <title>GeoEnergy</title>
+    </head>
+    <body class="site">
+        <header><!--Etiqueta que define el encabezado de la pagina-->
+            <h1><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"class="icon icon-tabler icons-tabler-outline icon-tabler-volcano"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 8v-1a2 2 0 1 0 -4 0" /><path d="M15 8v-1a2 2 0 1 1 4 0" /><path d="M4 20l3.472 -7.812a2 2 0 0 1 1.828 -1.188h5.4a2 2 0 0 1 1.828 1.188l3.472 7.812" /><path d="M6.192 15.064a2.14 2.14 0 0 1 .475 -.064c.527 -.009 1.026 .178 1.333 .5c.307 .32 .806 .507 1.333 .5c.527 .007 1.026 -.18 1.334 -.5c.307 -.322 .806 -.509 1.333 -.5c.527 -.009 1.026 .178 1.333 .5c.308 .32 .807 .507 1.334 .5c.527 .007 1.026 -.18 1.333 -.5c.307 -.322 .806 -.509 1.333 -.5c.161 .003 .32 .025 .472 .064" /><path d="M12 8v-4" /></svg>GeoEnergy</h1><!--ETIQUETA QUE DEFINE UN TITULO DE PRIMER NIVEL-->
+            <nav><!--Etiqueta que define una seccion de navegacion-->
+                <a href="../../index.html" data-section="inicio">Inicio</a><!--Enlace a la seccion de inicio-->
+                <a href="./dashboard.html" data-section="dashboard">Dashboard</a><!--Enlace a la seccion de dashboard-->
+                <a href="../views/calculadora.html" data-section="calculadora">Calculadora</a><!--Enlace a la seccion de calculadora-->
+                <div class="nav-toggle" id="nav-toggle"><!--Boton de menu para dispositivos moviles-->
+                    <span class="bar"></span><!--Linea del boton de menu-->
+                    <span class="bar"></span><!--Linea del boton de menu-->
+                    <span class="bar"></span><!--Linea del boton de menu-->
+                </div>
+            </nav>
+        </header>
+        <!-- Sección Dashboard -->
+        <section id="dashboard" class="section"><!--Etiqueta que define una seccion de la pagina-->
+            <div class="container"><!--Contenedor principal-->
+                <h2 class="section-title">Dashboard de Energía Geotérmica</h2><!--Titulo de la seccion-->
+                
+                <!-- Estadísticas Principales -->
+                <div class="stats-grid"><!--Contenedor de estadisticas-->
+                    <div class="stat-card"><!--Tarjeta de estadistica-->
+                        <div class="stat-icon"><!--Icono de estadistica-->
+                            <i class="fas fa-bolt"></i><!--Icono de rayo-->
+                        </div>
+                        <div class="stat-info"><!--Informacion de estadistica-->
+                            <h3>164 TWh</h3><!--Valor de estadistica-->
+                            <p>Producción Global 2024</p><!--Descripcion de estadistica-->
+                        </div>
+                    </div>
+                    <div class="stat-card"><!--Tarjeta de estadistica-->
+                        <div class="stat-icon"><!--Icono de estadistica-->
+                            <i class="fas fa-globe-americas"></i><!--Icono de globo-->
+                        </div>
+                        <div class="stat-info"><!--Informacion de estadistica-->
+                            <h3>32 Países</h3><!--Valor de estadistica-->
+                            <p>Producen Energía Geotérmica</p><!--Descripcion de estadistica-->
+                        </div>
+                    </div>
+                    <div class="stat-card"><!--Tarjeta de estadistica-->
+                        <div class="stat-icon"><!--Icono de estadistica-->
+                            <i class="fas fa-thermometer-half"></i><!--Icono de termometro-->
+                        </div>
+                        <div class="stat-info"><!--Informacion de estadistica-->
+                            <h3>47.2 GW</h3><!--Valor de estadistica-->
+                            <p>Capacidad Instalada 2024</p><!--Descripcion de estadistica-->
+                        </div>
+                    </div>
+                    <div class="stat-card"><!--Tarjeta de estadistica-->
+                        <div class="stat-icon"><!--Icono de estadistica-->
+                            <i class="fas fa-leaf"></i><!--Icono de hoja-->
+                        </div>
+                        <div class="stat-info"><!--Informacion de estadistica-->
+                            <h3>0.3 Gt CO2</h3><!--Valor de estadistica-->
+                            <p>Emisiones Evitadas Anualmente</p><!--Descripcion de estadistica-->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráficos -->
+                <div class="charts-grid"><!--Contenedor de graficos-->
+                    <div class="chart-container"><!--Contenedor de grafico-->
+                        <h3>Producción de Energía por País (TWh)</h3><!--Titulo del grafico-->
+                        <canvas id="barChart"></canvas><!--Canvas para el grafico de barras-->
+                    </div>
+                    <div class="chart-container"><!--Contenedor de grafico-->
+                        <h3>Distribución por Tipo de Sistema</h3><!--Titulo del grafico-->
+                        <canvas id="pieChart"></canvas><!--Canvas para el grafico de torta-->
+                    </div>
+                </div>
+
+                <!-- Gráfico de Líneas -->
+                <div class="chart-container full-width"><!--Contenedor de grafico de ancho completo-->
+                    <h3>Evolución de la Capacidad Geotérmica (2018-2024)</h3><!--Titulo del grafico-->
+                    <canvas id="lineChart"></canvas><!--Canvas para el grafico de lineas-->
+                </div>
+            </div>
+        </section>
+        <footer class="site-footer mt-5"><!--Etiqueta que define el pie de pagina-->
+            <div class="container py-5"><!--Contenedor principal del footer-->
+                <div class="row"><!--Fila del footer-->
+                    <div class="col-12 col-md-4 mb-3"><!--Columna del footer-->
+                        <h5>Sobre GeoEnergy</h5><!--Titulo de la seccion-->
+                        <p class="mb-0">Proyecto dedicado a divulgar y ofrecer herramientas sobre energía geotérmica. Recursos, calculadoras y datos técnicos para estudiantes y profesionales.</p><!--Descripcion del sitio-->
+                    </div>
+                    <div class="col-6 col-md-2 mb-3"><!--Columna del footer-->
+                        <h6>Enlaces</h6><!--Titulo de la seccion-->
+                        <ul class="list-unstyled"><!--Lista de enlaces-->
+                            <li><a href="/index.html">Inicio</a></li><!--Enlace a la seccion de inicio-->
+                            <li><a href="dashboard.html">Dashboard</a></li><!--Enlace a la seccion de dashboard-->
+                            <li><a href="calculadora.html">Calculadora</a></li><!--Enlace a la seccion de calculadora-->
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3"><!--Columna del footer-->
+                        <h6>Contacto</h6><!--Titulo de la seccion-->
+                        <address class="mb-0"><!--Direccion de contacto-->
+                            <div>GeoEnergy S.L.</div><!--Nombre de la empresa-->
+                            <div>Email: <a href="mailto:info@geoenergy.example">info@geoenergy.example</a></div><!--Email de contacto-->
+                            <div>Tel: <a href="tel:+34123456789">+34 123 456 789</a></div><!--Telefono de contacto-->
+                        </address>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3"><!--Columna del footer-->
+                        <h6>Síguenos</h6><!--Titulo de la seccion-->
+                        <div class="social d-flex gap-2"><!--Contenedor de enlaces sociales-->
+                            <a href="#" aria-label="Twitter" class="social-link">Twitter</a><!--Enlace a Twitter-->
+                            <a href="#" aria-label="LinkedIn" class="social-link">LinkedIn</a><!--Enlace a LinkedIn-->
+                            <a href="#" aria-label="YouTube" class="social-link">YouTube</a><!--Enlace a YouTube-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Chart.js (CDN) - necesario para renderizar los charts -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+        <!-- Script que inicializa los charts del dashboard -->
+        <script src="../services/dashboard.js"></script>
+        <!-- tu script general -->
+        <script src="../services/script.js"></script>
+    </body>
+</html>

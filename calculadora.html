@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"><!--Define la codificacion de caracteres-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Hace que el sitio sea responsivo en dispositivos moviles-->
+        <meta name="description" content="Sitio web sobre energia geotermica"><!--Descripcion del sitio web-->
+        <link rel="icon" href="../../assets/img/volcano.svg" type="image/png"><!--Icono de la pestaña del navegador-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"><!--Enlace a la hoja de estilos de Bootstrap-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-p6Oa2... (omit) ..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../assets/styles/style.css"><!--Enlace a la hoja de estilos CSS (carga después de Bootstrap) -->
+        <link rel="stylesheet" href="../../assets/styles/header.css"><!--Enlace a la hoja de estilos CSS para el header-->
+        <link rel="stylesheet" href="../../assets/styles/toggle.css"><!--Enlace a la hoja de estilos CSS para el toggle-->
+        <link rel="stylesheet" href="../../assets/styles/footer.css"><!--Enlace a la hoja de estilos CSS para el footer-->
+        <link rel="stylesheet" href="../../assets/styles/calculadora.css"><!--Enlace a la hoja de estilos CSS para el dashboard-->
+        <link rel="stylesheet" href="../../assets/styles/calculadora-buttons.css"><!--Enlace a la hoja de estilos CSS para los botones-->
+        <title>GeoEnergy</title>
+    </head>
+    <body class="site">
+        <header><!--Etiqueta que define el encabezado de la pagina-->
+            <h1><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"class="icon icon-tabler icons-tabler-outline icon-tabler-volcano"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 8v-1a2 2 0 1 0 -4 0" /><path d="M15 8v-1a2 2 0 1 1 4 0" /><path d="M4 20l3.472 -7.812a2 2 0 0 1 1.828 -1.188h5.4a2 2 0 0 1 1.828 1.188l3.472 7.812" /><path d="M6.192 15.064a2.14 2.14 0 0 1 .475 -.064c.527 -.009 1.026 .178 1.333 .5c.307 .32 .806 .507 1.333 .5c.527 .007 1.026 -.18 1.334 -.5c.307 -.322 .806 -.509 1.333 -.5c.527 -.009 1.026 .178 1.333 .5c.308 .32 .807 .507 1.334 .5c.527 .007 1.026 -.18 1.333 -.5c.307 -.322 .806 -.509 1.333 -.5c.161 .003 .32 .025 .472 .064" /><path d="M12 8v-4" /></svg>GeoEnergy</h1><!--ETIQUETA QUE DEFINE UN TITULO DE PRIMER NIVEL-->
+            <nav><!--Etiqueta que define una seccion de navegacion-->
+                <a href="../../index.html" data-section="inicio">Inicio</a><!--Enlace a la seccion de inicio-->
+                <a href="../views/dashboard.html" data-section="dashboard">Dashboard</a><!--Enlace a la seccion de dashboard-->
+                <a href="./calculadora.html" data-section="calculadora">Calculadora</a><!--Enlace a la seccion de calculadora-->
+                <div class="nav-toggle" id="nav-toggle"><!--Boton de menu para dispositivos moviles-->
+                    <span class="bar"></span><!--Linea del boton de menu-->
+                    <span class="bar"></span><!--Linea del boton de menu-->
+                    <span class="bar"></span><!--Linea del boton de menu-->
+                </div>
+            </nav>
+        </header>
+        <!-- Sección Calculadora -->
+        <section id="calculadora" class="section">
+            <div class="container">
+                <h2 class="section-title">Calculadora de Consumo Geotérmico</h2>
+                
+                <div class="calculator-container">
+                    <div class="calculator-form">
+                        <h3>Calcula tu Consumo en TWh</h3>
+                        <div class="form-group">
+                            <label for="consumo">Consumo Base (kWh):</label>
+                            <input type="number" id="consumo" placeholder="Ingrese consumo (kWh)" min="1" step="0.1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tiempo">Período de Tiempo:</label>
+                            <select id="tiempo">
+                                <option value="" selected disabled>Seleccionar período</option>
+                                <option value="1">1 Día</option>
+                                <option value="7">1 Semana</option>
+                                <option value="30">1 Mes</option>
+                                <option value="365">1 Año</option>
+                                <option value="custom">Personalizado</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="custom-days" style="display: none;">
+                            <label for="dias-custom">Número de Días:</label>
+                            <input type="number" id="dias-custom" placeholder="Ej: 30" min="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="factor">Eficiencia del Sistema:</label>
+                            <select id="factor">
+                                <option value="" selected disabled>Seleccionar eficiencia</option>
+                                <option value="0.88">Vapor Seco (88%)</option>
+                                <option value="0.92">Vapor Flash (92%)</option>
+                                <option value="0.95">Ciclo Binario (95%)</option>
+                            </select>
+                        </div>
+
+                        <div class="button-group">
+                            <button id="calcular" class="calculate-btn">
+                                <i class="fas fa-calculator"></i>
+                                Calcular Consumo
+                            </button>
+                            <button id="limpiar" class="clear-btn" style="display: none;">
+                                <i class="fas fa-trash-alt"></i>
+                                Limpiar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="calculator-results">
+                        <h3>Resultados del Cálculo</h3>
+                        <div class="result-card">
+                            <div class="result-item">
+                                <span class="result-label">Consumo Total:</span>
+                                <span class="result-value" id="resultado-kwh">0 kWh</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">En Terawatios-hora:</span>
+                                <span class="result-value" id="resultado-twh">0 TWh</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">CO2 Evitado:</span>
+                                <span class="result-value" id="resultado-co2">0 kg CO2</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Costo Estimado:</span>
+                                <span class="result-value" id="resultado-costo">$0 USD</span>
+                            </div>
+                        </div>
+
+                        <!-- Comparación Visual -->
+                        <div class="comparison-chart">
+                            <h4>Comparación con Otras Fuentes</h4>
+                            <canvas id="comparisonChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="site-footer mt-5"><!--Etiqueta que define el pie de pagina-->
+            <div class="container py-5"><!--Contenedor principal del footer-->
+                <div class="row"><!--Fila del footer-->
+                    <div class="col-12 col-md-4 mb-3"><!--Columna del footer-->
+                        <h5>Sobre GeoEnergy</h5><!--Titulo de la seccion-->
+                        <p class="mb-0">Proyecto dedicado a divulgar y ofrecer herramientas sobre energía geotérmica. Recursos, calculadoras y datos técnicos para estudiantes y profesionales.</p><!--Descripcion del sitio-->
+                    </div>
+                    <div class="col-6 col-md-2 mb-3"><!--Columna del footer-->
+                        <h6>Enlaces</h6><!--Titulo de la seccion-->
+                        <ul class="list-unstyled"><!--Lista de enlaces-->
+                            <li><a href="/index.html">Inicio</a></li><!--Enlace a la seccion de inicio-->
+                            <li><a href="dashboard.html">Dashboard</a></li><!--Enlace a la seccion de dashboard-->
+                            <li><a href="calculadora.html">Calculadora</a></li><!--Enlace a la seccion de calculadora-->
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3"><!--Columna del footer-->
+                        <h6>Contacto</h6><!--Titulo de la seccion-->
+                        <address class="mb-0"><!--Direccion de contacto-->
+                            <div>GeoEnergy S.L.</div><!--Nombre de la empresa-->
+                            <div>Email: <a href="mailto:info@geoenergy.example">info@geoenergy.example</a></div><!--Email de contacto-->
+                            <div>Tel: <a href="tel:+34123456789">+34 123 456 789</a></div><!--Telefono de contacto-->
+                        </address>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3"><!--Columna del footer-->
+                        <h6>Síguenos</h6><!--Titulo de la seccion-->
+                        <div class="social d-flex gap-2"><!--Contenedor de enlaces sociales-->
+                            <a href="#" aria-label="Twitter" class="social-link">Twitter</a><!--Enlace a Twitter-->
+                            <a href="#" aria-label="LinkedIn" class="social-link">LinkedIn</a><!--Enlace a LinkedIn-->
+                            <a href="#" aria-label="YouTube" class="social-link">YouTube</a><!--Enlace a YouTube-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Chart.js (CDN) - necesario para renderizar los charts -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+        <!-- SweetAlert2 for nice alerts -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- script para la calculadora -->
+        <script src="../services/calculadora.js"></script>
+        <!-- tu script general -->
+        <script src="../services/script.js"></script>
+    </body>
+</html>
