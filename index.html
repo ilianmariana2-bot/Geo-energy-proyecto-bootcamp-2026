@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio web sobre energia geotermica">
+    <link rel="icon" href="./assets/img/volcano.svg" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/header.css">
+    <link rel="stylesheet" href="./assets/styles/toggle.css">
+    <link rel="stylesheet" href="./assets/styles/carrousel.css">
+    <link rel="stylesheet" href="./assets/styles/footer.css">
+    <title>GeoEnergy</title>
+</head>
+<body class="site">
+    <header>
+        <h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-volcano">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 8v-1a2 2 0 1 0 -4 0" />
+                <path d="M15 8v-1a2 2 0 1 1 4 0" />
+                <path d="M4 20l3.472 -7.812a2 2 0 0 1 1.828 -1.188h5.4a2 2 0 0 1 1.828 1.188l3.472 7.812" />
+                <path d="M6.192 15.064a2.14 2.14 0 0 1 .475 -.064c.527 -.009 1.026 .178 1.333 .5c.307 .32 .806 .507 1.333 .5c.527 .007 1.026 -.18 1.334 -.5c.307 -.322 .806 -.509 1.333 -.5c.527 -.009 1.026 .178 1.333 .5c.308 .32 .807 .507 1.334 .5c.527 .007 1.026 -.18 1.333 -.5c.307 -.322 .806 -.509 1.333 -.5c.161 .003 .32 .025 .472 .064" />
+                <path d="M12 8v-4" />
+            </svg>
+            GeoEnergy
+        </h1>
+        <nav>
+            <a href="index.html" data-section="inicio">Inicio</a>
+            <a href="./src/views/dashboard.html" data-section="dashboard">Dashboard</a>
+            <a href="./src/views/calculadora.html" data-section="calculadora">Calculadora</a>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <div class="carousel-slide active">
+                    <img src="./assets/img/sam-bark-R1GWSOJ9cng-unsplash.jpg" alt="Planta geotérmica">
+                    <div class="carousel-content">
+                        <h3>Planta geotérmica</h3>
+                        <p class="carousel-desc">Las plantas geotérmicas aprovechan vapor y agua caliente del subsuelo para mover turbinas y generar electricidad. Son fuentes de energía de base, con bajas emisiones y alta disponibilidad durante todo el año.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/img/matt-palmer-UXjYy04EvOc-unsplash.jpg" alt="Géiseres naturales">
+                    <div class="carousel-content">
+                        <h3>Recursos naturales</h3>
+                        <p class="carousel-desc">Géiseres y aguas termales son indicadores claros de recursos geotérmicos. Además de generar electricidad, el calor se puede usar directamente en calefacción, invernaderos y aplicaciones industriales.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/img/hermosa-foto-de-unos-pequenos-lagos-en-un-campo-rocoso.jpg" alt="Instalación geotérmica">
+                    <div class="carousel-content">
+                        <h3>Tecnologías modernas</h3>
+                        <p class="carousel-desc">Los ciclos binarios y sistemas de baja temperatura permiten explotar recursos moderados, ampliando el uso de la geotermia para climatización, redes de calefacción y proyectos descentralizados.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="carousel-btn next" id="nextBtn" aria-label="Siguiente">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="carousel-indicators" id="indicators"></div>
+        </div>
+    </div>
+    <section class="Inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <h2 class="titulillo">¿Qué es la energía geotérmica?</h2>
+                    <p class="parrIni">La energía geotérmica es un tipo de energía más o menos renovable, de origen volcánico, es decir, que consiste en aprovechar el calor interno de la Tierra para extraer del subsuelo aguas a elevadas temperaturas, de la cual puede extraerse la energía calórica o que puede emplearse para generar electricidad. <br>
+                        A medida que nos acerquemos al núcleo del planeta, las temperaturas aumentan considerablemente, ya que hay más presión, más gravedad, y menos distancia del núcleo de metal fundido que es el corazón de la Tierra. Por eso se puede hallar bajo tierra numerosos depósitos de agua hirviente, que puede ser liberada y conducida a la superficie, dando origen a grandes chorros de vapor, géiseres y aguas termales que, desde tiempos remotos, han sido aprovechados por la humanidad con diversos fines. Este tipo de yacimientos son muy frecuentes en zonas de alta actividad volcánica.</p>
+                </div>
+                <div class="divVideo col-12 col-md-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/RUhO7TBQ8MU?si=hOK6idZm2_bPsuRZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ventajas-desventajas" class="container my-5">
+        <h2 class="text-center mb-4">Ventajas y Desventajas</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+                
+                <div class="col">
+                    <div class="card h-100 text-center shadow-sm card-custom card-ventaja">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg>
+                            </div>
+                            <h3 class="card-title">VENTAJA: Fuente Base</h3>
+                            <ul class="list-unstyled">
+                                <li>Fuente *renovable y constante* (*baseload*), disponible 24/7.</li>
+                                <li>Opera con alta *eficiencia* y un factor de capacidad elevado.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 text-center shadow-sm card-custom card-desventaja">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 6v12"></path><path d="M9 9h6a3 3 0 0 1 0 6h-6"></path></svg>
+                            </div>
+                            <h3 class="card-title">DESVENTAJA: Inversión y Exploración</h3>
+                            <ul class="list-unstyled">
+                                <li>*Alto coste inicial* de perforación y exploración del subsuelo.</li>
+                                <li>El *riesgo financiero* de no encontrar un recurso viable es considerable.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 text-center shadow-sm card-custom card-ventaja">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 22c4.97 0 9-4.03 9-9-9 0-9 9-9 9"></path><path d="M11 2c-4.97 0-9 4.03-9 9s4.03 9 9 9"></path><path d="M11 2v20"></path></svg>
+                            </div>
+                            <h3 class="card-title">VENTAJA: Ecología y Diseño</h3>
+                            <ul class="list-unstyled">
+                                <li>*Baja emisión* de gases de efecto invernadero comparada con fósiles.</li>
+                                <li>*Ahorro de espacio* por la naturaleza compacta de las instalaciones.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 text-center shadow-sm card-custom card-desventaja">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 7v5l3 3"></path></svg>
+                            </div>
+                            <h3 class="card-title">DESVENTAJA: Limitación Geográfica</h3>
+                            <ul class="list-unstyled">
+                                <li>*Disponibilidad geográfica limitada* a zonas con actividad geotérmica.</li>
+                                <li>Riesgo de *liberación de minerales/gases* tóxicos y posible *subsidencia* del terreno.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    <footer class="site-footer mt-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 col-md-4 mb-3">
+                    <h5>Sobre GeoEnergy</h5>
+                    <p class="mb-0">Proyecto dedicado a divulgar y ofrecer herramientas sobre energía geotérmica. Recursos, calculadoras y datos técnicos para estudiantes y profesionales.</p>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="src/views/dashboard.html">Dashboard</a></li>
+                        <li><a href="src/views/calculadora.html">Calculadora</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <h6>Contacto</h6>
+                    <address class="mb-0">
+                        <div>GeoEnergy S.L.</div>
+                        <div>Email: <a href="mailto:info@geoenergy.example">info@geoenergy.example</a></div>
+                        <div>Tel: <a href="tel:+34123456789">+57 123 456 789</a></div>
+                    </address>
+                </div>
+                <div class="col-12 col-md-3 mb-3">
+                    <h6>Síguenos</h6>
+                    <div class="social d-flex gap-2">
+                        <a href="#" aria-label="Twitter" class="social-link">Twitter</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">LinkedIn</a>
+                        <a href="#" aria-label="YouTube" class="social-link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="./src/services/script.js"></script>
+    <script src="./src/services/carrousel.js"></script>
+</body>
+</html>
