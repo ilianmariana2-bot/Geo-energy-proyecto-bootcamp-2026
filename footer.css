@@ -1,0 +1,32 @@
+/* Footer styles */
+.site-footer {
+  background: var(--background-secondary);/* Fondo del footer */
+  color: var(--text-secondary);/* Color del texto */
+}
+.site-footer h5, .site-footer h6 {/* Títulos en el footer */
+  color: var(--text-primary);/* Color del texto */
+}
+.site-footer a {/* Enlaces en el footer */
+  color: var(--text-secondary);/* Color del texto */
+  text-decoration: none;/* Elimina el subrayado */
+}
+.site-footer a:hover {/* Estilo al pasar el ratón sobre los enlaces */
+  color: var(--primary-hover);/* Color al pasar el ratón */
+  text-decoration: underline;/* Subrayado al pasar el ratón */
+}
+.site-footer .social-link {/* Enlaces sociales en el footer */
+  display: inline-block;/* Muestra como bloque en línea */
+  padding: 0.25rem 0.5rem;/* Padding interno */
+  border-radius: 4px;/* Bordes redondeados */
+  background: transparent;/* Fondo transparente */
+  color: var(--text-secondary);/* Color del texto */
+  text-decoration: none;/* Elimina el subrayado */
+}
+.site-footer .social-link:hover {/* Estilo al pasar el ratón sobre los enlaces sociales */
+  color: var(--primary-hover);/* Color al pasar el ratón */
+}
+
+@media (max-width: 767.98px) {/* Estilos para pantallas menores a 768px */
+  .site-footer .social { gap: 0.5rem; }/* Espacio entre iconos sociales */
+  .site-footer .footer-bottom { text-align: center; }/* Centra el texto en el footer */
+}

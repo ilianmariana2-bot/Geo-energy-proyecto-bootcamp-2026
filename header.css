@@ -1,0 +1,50 @@
+/* Header */
+.site header {/* Estilos del header (scope: .site) */
+  border-bottom: 1px solid var(--border);/* Borde inferior */
+  background: var(--background-secondary);/* Fondo del header */
+  padding: .5rem 1rem;/* Padding interno */
+  display: flex;/* Usa Flexbox */
+  position: relative; /* para que el nav absoluto se situe relativo al header */
+  z-index: 20;
+  align-items: center;/* Alinea verticalmente al centro */
+  justify-content: space-between;/* Espacio entre elementos */
+  gap: 2rem;/* Espacio entre elementos */
+
+  h2 {/* Título del sitio */
+    font-size: 1.25rem;/* Tamaño de fuente */
+    font-weight: 700;/* Peso de fuente */
+    color: var(--text-primary);/* Color del texto */
+  }
+}
+
+/* Navegación del header a otras páginas */
+.site nav {
+  align-items: center;/* Alinea verticalmente al centro */
+  gap: 1rem;/* Espacio entre enlaces */
+  display: flex;/* Usa Flexbox */
+
+  a {
+    text-decoration: none;/* Elimina el subrayado */
+    color: var(--text-secondary);/* Color del texto */
+    transition: color 0.2s;/* Transición suave para el color */
+    font-weight: 500;/* Peso de fuente */
+
+    &:hover, &:focus {/* Cambia el color al pasar el ratón o al enfocar */
+      color: var(--primary-hover);/* Color primario */
+      outline: none;/* Elimina el contorno */
+    }
+  }
+}
+
+/* Botones del Header */
+.site header div a {/* Selecciona los enlaces dentro de un div en el header */
+  padding: 0.5rem 1rem;/* Padding interno */
+  border-radius: 0.5rem;/* Bordes redondeados */
+  background-color: #334155;/* Color de fondo */
+  color: var(--text-primary);/* Color del texto */
+  display: inline-block;/* Muestra como bloque en línea */
+  font-size: 0.875rem;/* Tamaño de fuente */
+  font-weight: 700;/* Peso de fuente */
+  text-decoration: none;/* Elimina el subrayado */
+  /* TODO */
+}

@@ -1,0 +1,130 @@
+* { /* Establece un box-sizing global para que el padding y border se incluyan en el ancho y alto total de los elementos */
+  margin: 0;/* Elimina el margen por defecto */
+  padding: 0;/* Elimina el padding por defecto */
+  box-sizing: border-box;/* Incluye el padding y border en el ancho y alto total */
+}
+
+:root { /* Variables de colores */
+  --primary: #3B3C36;/* Color primario */
+  --primary-dark: #3B3C36;/* Color primario oscuro */
+  --primary-hover: #D99058;/* Color primario al pasar el ratón */
+  --primary-light: #D99058;/* Color primario claro */
+  --background: #3B3C36;/* Color de fondo */
+  --text-primary: #F2EBE2;/* Color de texto principal */
+  --text-secondary: #F2EBE2;/* Color de texto secundario */
+  --border: #3B3C36;/* Color de borde */
+  --shadow: #3b3c36;/* Sombra */
+  --background-secondary: #2a2a24;/* Fondo secundario */
+}
+
+body.site {/* Estilos globales del body (scope: .site) */
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--background);/* Color de fondo */
+  color: var(--text-primary);/* Color del texto */
+  min-height: 100vh;/* Altura mínima para cubrir toda la ventana */
+  display: flex;/* Usa Flexbox para el layout */
+  flex-direction: column;/* Dirección de los elementos en columna */
+  line-height: 1.6;/* Altura de línea para mejorar la legibilidad */
+}
+
+/* Títulos principales */
+.site h1 {
+  font-size: 1.5rem;/* Tamaño de fuente */
+  line-height: 1.2;/* Altura de línea */
+  text-wrap: balance;/* Balanceo del texto */
+  display: flex;/* Usa Flexbox para alinear iconos y texto */
+  align-items: center;/* Alinea verticalmente al centro */
+  gap: 0.5rem;/* Espacio entre iconos y texto */
+
+  svg {/* Iconos dentro de h1 */
+    width: 2rem;/* Ancho del icono */
+    height: 2rem;/* Alto del icono */
+    color: var(--primary-light);/* Color del icono */
+  }
+}
+
+h1 + p {/* Párrafo inmediatamente después de h1 */
+  text-wrap: balance;/* Balanceo del texto */
+  margin-bottom: 2rem;/* Espacio inferior */
+}
+
+.site .titulillo {
+  text-align: center;
+}
+
+.site .parrIni {
+  text-align: justify;
+  margin: 0 15px 0 15px;
+}
+
+.site .divVideo {
+  margin: 0;
+  height: auto; /* Ajuste: no ocupar 100vh para evitar overflow */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+}
+
+.site .divVideo .ratio {
+  width: 100%;
+  max-width: 100%;
+}
+
+.site .divVideo iframe {
+  border: 0;
+}
+
+/* Estilos personalizados para tarjetas de ventajas/desventajas */
+.card-custom {
+  background-color: var(--background-secondary); /* Gris oscuro #2a2a24 */
+  border: none;
+  color: var(--text-primary); /* Texto claro */
+  transition: all 0.3s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(217, 144, 88, 0.2) !important;
+}
+
+.card-custom .card-title {
+  color: var(--primary-light); /* Naranja #D99058 */
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.card-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+  height: 60px;
+  align-items: center;
+}
+
+.card-icon svg {
+  color: var(--primary-light); /* Naranja #D99058 */
+  width: 48px;
+  height: 48px;
+  stroke-width: 1.5;
+}
+
+.card-custom.card-ventaja .card-icon svg {
+  color: var(--primary-light); /* Naranja para ventajas */
+}
+
+.card-custom.card-desventaja .card-icon svg {
+  color: var(--primary-hover); /* Naranja para desventajas (mismo color) */
+}
+
+.card-custom .list-unstyled li {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+
+
+

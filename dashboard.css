@@ -1,0 +1,156 @@
+:root { /* Variables de colores */
+  --primary: #3B3C36;/* Color primario */
+  --primary-dark: #3B3C36;/* Color primario oscuro */
+  --primary-hover: #D99058;/* Color primario al pasar el ratón */
+  --primary-light: #D99058;/* Color primario claro */
+  --background: #3B3C36;/* Color de fondo */
+  --text-primary: #F2EBE2;/* Color de texto principal */
+  --text-secondary: #F2EBE2;/* Color de texto secundario */
+  --border: #3B3C36;/* Color de borde */
+  --shadow: #3b3c36;/* Sombra */
+  --background-secondary: #2a2a24;/* Fondo secundario */
+  --border-radius: 12px;/* Radio de borde */
+  --shadow-hover: 0 10px 30px rgba(0,0,0,0.25);/* Sombra al pasar el ratón */
+}
+
+/* Dashboard - Responsive Stats Grid */
+.stats-grid {/* Contenedor de estadísticas */
+    display: grid;/* Diseño de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));/* Columnas automáticas */
+    gap: clamp(15px, 3vw, 25px);/* Espacio entre elementos */
+    margin-bottom: 50px;/* Margen inferior */
+}
+
+.stat-card {/* Tarjeta de estadística */
+    background: var(--background-secondary);/* Fondo secundario */
+    padding: clamp(20px, 4vw, 30px);/* Relleno */
+    border-radius: var(--border-radius);/* Radio de borde */
+    box-shadow: var(--shadow);/* Sombra */
+    display: flex;/* Diseño flexible */
+    align-items: center;/* Alineación de elementos */
+    gap: clamp(15px, 3vw, 20px);/* Espacio entre elementos */
+    transition: var(--transition);/* Transición suave */
+    width: 100%;/* Ancho completo */
+}
+
+.stat-card:hover {/* Efecto al pasar el ratón */
+    transform: translateY(-3px);/* Levantar tarjeta */
+    box-shadow: var(--shadow-hover);/* Sombra al pasar el ratón */
+}
+
+.stat-icon {/* Icono de estadística */
+    width: clamp(50px, 10vw, 70px);/* Ancho */
+    height: clamp(50px, 10vw, 70px);/* Alto */
+    background: var(--primary-light);/* Fondo primario claro */
+    border-radius: 50%;/* Borde redondeado */
+    display: flex;/* Diseño flexible */
+    align-items: center;/* Alineación de elementos */
+    justify-content: center;/* Justificación de contenido */
+    color: var(--text-primary);/* Color de texto principal */
+    font-size: clamp(1.2rem, 3vw, 1.8rem);/* Tamaño de fuente */
+    flex-shrink: 0;/* No reducir tamaño */
+}
+
+.stat-info h3 {/* Título de estadística */
+    font-size: clamp(1.5rem, 4vw, 2rem);/* Tamaño de fuente */
+    color: var(--primary-light);/* Color primario claro */
+    margin-bottom: 5px;/* Margen inferior */
+}
+.stat-info p {/* Texto de estadística */
+    color: var(--text-primary);/* Color de texto principal */
+    font-size: clamp(0.8rem, 2vw, 0.9rem);/* Tamaño de fuente */
+}
+/* Gráficos - Responsive Charts */
+.charts-grid {/* Contenedor de gráficos */
+    display: grid;/* Diseño de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));/* Columnas automáticas */
+    gap: clamp(20px, 4vw, 30px);/* Espacio entre elementos */
+    margin-bottom: 40px;/* Margen inferior */
+}
+
+.chart-container {/* Contenedor de gráfico */
+    background: var(--background-secondary);/* Fondo secundario */
+    padding: clamp(15px, 3vw, 25px);/* Relleno */
+    border-radius: var(--border-radius);/* Radio de borde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);/* Sombra */
+    width: 100%;/* Ancho completo */
+    height: 380px;/* Alto */
+    display: flex;/* Diseño flexible */
+    flex-direction: column;/* Dirección de flexión */
+    overflow: hidden;/* Ocultar desbordamiento */
+    transition: box-shadow 0.3s ease;/* Transición de sombra */
+}
+
+.chart-container:hover {/* Efecto al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(210, 105, 30, 0.2);/* Sombra al pasar el ratón */
+}
+
+.chart-container.full-width {/* Contenedor de gráfico de ancho completo */
+    grid-column: 1 / -1;/* Ocupa todas las columnas */
+    height: 400px;/* Alto */
+}
+
+.chart-container h3 {/* Título del gráfico */
+    color: var(--primary-light);/* Color primario claro */
+    margin: 0 0 15px 0;/* Margen */
+    text-align: center;/* Alineación centrada */
+    font-size: clamp(1rem, 2.5vw, 1.2rem);/* Tamaño de fuente */
+    flex-shrink: 0;/* No reducir tamaño */
+    font-weight: 600;/* Peso de fuente */
+    letter-spacing: 0.5px;/* Espaciado entre letras */
+}
+
+.chart-container canvas {/* Lienzo del gráfico */
+    flex: 1;/* Flexibilidad */
+    min-height: 250px;/* Altura mínima */
+    width: 100% !important;/* Ancho completo */
+    height: 100% !important;/* Alto completo */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 640px) {/* Pantallas pequeñas */
+    .charts-grid {/* Contenedor de gráficos */
+        grid-template-columns: 1fr;/* Una columna */
+        gap: clamp(15px, 3vw, 20px);/* Espacio entre elementos */
+    }
+    
+    .chart-container {/* Contenedor de gráfico */
+        height: 380px;/* Alto */
+        padding: clamp(12px, 2vw, 18px);/* Relleno */
+    }
+    
+    .chart-container.full-width {/* Contenedor de gráfico de ancho completo */
+        height: 400px;/* Alto */
+    }
+    
+    .chart-container h3 {/* Título del gráfico */
+        margin-bottom: 12px;/* Margen inferior */
+        font-size: clamp(0.95rem, 2.2vw, 1.1rem);/* Tamaño de fuente */
+    }
+}
+
+/* Responsive para pantallas medianas */
+@media (min-width: 641px) and (max-width: 1024px) {/* Pantallas medianas */
+    .chart-container {/* Contenedor de gráfico */
+        height: 380px;/* Alto */
+    }
+    
+    .chart-container.full-width {/* Contenedor de gráfico de ancho completo */
+        height: 400px;/* Alto */
+    }
+}
+
+/* Responsive para pantallas grandes */
+@media (min-width: 1025px) {/* Pantallas grandes */
+    .charts-grid {/* Contenedor de gráficos */
+        grid-template-columns: repeat(2, 1fr);/* Dos columnas */
+    }
+    
+    .chart-container {/* Contenedor de gráfico */
+        height: 380px;/* Alto */
+    }
+    
+    .chart-container.full-width {/* Contenedor de gráfico de ancho completo */
+        height: 400px;/* Alto */
+    }
+}

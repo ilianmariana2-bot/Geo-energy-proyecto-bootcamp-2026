@@ -1,0 +1,66 @@
+/* Estilos para el botón de hamburguesa (nav-toggle) y comportamiento responsive del nav */
+.site .nav-toggle {/* Estilos del botón de hamburguesa */
+  display: none; /* visible sólo en pantallas pequeñas */
+  cursor: pointer;/* Cambia el cursor al pasar por encima */
+  width: 36px;/* ancho del botón */
+  height: 28px;/* alto del botón */
+}
+.site .nav-toggle .bar {/* barras de la hamburguesa */
+  display: block;/* Mostrar como bloque */
+  width: 22px;/* ancho de cada barra */
+  height: 3px;/* alto de cada barra */
+  background: var(--text-secondary);/* Color de las barras */
+  margin: 3px 0;/* Margen vertical */
+  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;/* Transiciones suaves */
+  transform-origin: center;/* Origen de la transformación */
+}
+
+/* Responsive: en móviles ocultamos los enlaces y mostramos la hamburguesa */
+@media (max-width: 767.98px) {/* Pantallas menores a 768px */
+  .site nav {/* Estilos del nav en móvil */
+    position: relative;/* para que el nav absoluto se situe relativo al header */
+    padding-right: 0.5rem;/* espacio a la derecha */
+  }
+  .site nav a {/* Estilos de los enlaces en móvil */
+    display: none; /* ocultar enlaces por defecto en móvil */
+  }
+  .site .nav-toggle {/* Estilos del botón de hamburguesa en móvil */
+    display: flex;/* mostrar hamburguesa */
+    flex-direction: column; /* apilar las barras verticalmente */
+    justify-content: center;/* centra verticalmente */
+    align-items: center;/* centra horizontalmente */
+  }
+  /* Cuando el nav tiene la clase .open mostramos los enlaces en columna */
+  .site nav.open {/* Estilos del nav cuando está abierto */
+    background: var(--primary-light);/* Fondo semitransparente */
+    position: absolute;/* Posición absoluta para superponer */
+    top: 100%;/* Justo debajo del header */
+    right: 0;/* Alineado a la derecha */
+    left: 0;/* Alineado a la izquierda */
+    padding: 0.5rem 1rem 1rem 1rem;/* Padding interno */
+    display: flex;/* Mostrar como flex */
+    flex-direction: column;/* Dirección en columna */
+    gap: 0.5rem;/* Espacio entre elementos */
+    z-index: 30;/* Encima de otros elementos */
+  }
+  .site nav.open a {/* Estilos de los enlaces cuando el nav está abierto */
+    display: block;/* Mostrar los enlaces */
+    color: var(--text-primary);/* Color del texto */
+    padding: 0.5rem 0.25rem;/* Padding interno */
+    border-bottom: 1px solid rgba(255,255,255,0.04);/* Línea inferior */
+  }
+  .site nav.open .nav-toggle {/* Estilos del botón de hamburguesa cuando el nav está abierto */
+    align-self: flex-end;/* Alinea a la derecha */
+  }
+  /* Animación: transformar las barras a una X */
+  .site nav.open .nav-toggle .bar:nth-child(1) {/* Primera barra */
+    transform: translateY(6px) rotate(45deg);/* Mover y rotar */
+  }
+  .site nav.open .nav-toggle .bar:nth-child(2) {/* Segunda barra */
+    opacity: 0;/* Ocultar la barra */
+    transform: scaleX(0);/* Escalar a 0 en X */
+  }
+  .site nav.open .nav-toggle .bar:nth-child(3) {/* Tercera barra */
+    transform: translateY(-6px) rotate(-45deg);/* Mover y rotar */
+  }
+}

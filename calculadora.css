@@ -1,0 +1,327 @@
+:root { /* Variables de colores */
+  --primary: #3B3C36;/* Color primario */
+  --primary-dark: #3B3C36;/* Color primario oscuro */
+  --primary-hover: #D99058;/* Color primario al pasar el ratón */
+  --primary-light: #D99058;/* Color primario claro */
+  --background: #3B3C36;/* Color de fondo */
+  --text-primary: #F2EBE2;/* Color de texto principal */
+  --text-secondary: #F2EBE2;/* Color de texto secundario */
+  --border: #3B3C36;/* Color de borde */
+  --shadow: #3b3c36;/* Sombra */
+  --background-secondary: #2a2a24;/* Fondo secundario */
+  --border-radius: 12px;/* Radio de borde */
+  --shadow-hover: 0 10px 30px rgba(0,0,0,0.25);/* Sombra al pasar el ratón */
+  --transition: all 0.3s ease;/* Transición */
+}
+
+/* Calculadora - Responsive Layout */
+.calculator-container {/*contenedor de la calculadora*/
+    display: grid;/*mostrar como grid*/
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));/*columnas responsivas*/
+    gap: clamp(30px, 5vw, 40px);/*espacio entre columnas y filas*/
+    margin-top: 40px;/*margen superior*/
+}
+
+.calculator-form,
+.calculator-results {/*tarjetas de formulario y resultados*/
+    background: var(--background-secondary);/*fondo secundario*/
+    padding: clamp(25px, 5vw, 40px);/*padding responsivo*/
+    border-radius: var(--border-radius);/*borde redondeado*/
+    box-shadow: var(--shadow);/*sombra*/
+    width: 100%;/*ancho completo*/
+}
+
+.calculator-form h3,
+.calculator-results h3 {/*títulos de secciones*/
+    color: var(--primary-light);/*color primario claro*/
+    margin-bottom: 30px;/*margen inferior*/
+    text-align: center;/*centrar texto*/
+    font-size: clamp(1.2rem, 3vw, 1.4rem);/*tamaño de fuente responsivo*/
+}
+
+.form-group {/* Grupo de campos del formulario */
+    margin-bottom: 25px;/* Espacio inferior entre grupos */
+}
+
+.form-group label {/* Etiquetas de los campos */
+    display: block;/* Mostrar como bloque */
+    margin-bottom: 8px;/* Margen inferior */
+    color: var(--text-primary);/* Color de texto principal */
+    font-weight: 500;/* Peso de fuente */
+    font-size: clamp(0.9rem, 2vw, 1rem);/* Tamaño de fuente responsivo */
+}
+
+.form-group input,
+.form-group select {/* Campos de entrada y selección */
+    width: 100%;/* Ancho completo */
+    padding: 12px 15px;/* Relleno */
+    border: 2px solid var(--primary-light);/* Borde */
+    border-radius: 8px;/* Borde redondeado */
+    font-size: clamp(0.9rem, 2vw, 1rem);/* Tamaño de fuente responsivo */
+    transition: var(--transition);/* Transición */
+}
+
+.form-group input:focus,
+.form-group select:focus {/* Estilos al enfocar campos de entrada y selección */
+    outline: none;/* Sin contorno */
+    border-color: var(--primary-light);/* Color de borde */
+    box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.1);/* Sombra */
+}
+
+.calculate-btn {/* Botón Calcular */
+    width: 100%;/* Ancho completo */
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-hover));/* Fondo degradado */
+    color: var(--text-primary);/* Color de texto principal */
+    border: none;/* Sin borde */
+    padding: 15px 30px;/* Relleno */
+    border-radius: 8px;/* Borde redondeado */
+    font-size: clamp(1rem, 2.5vw, 1.1rem);/* Tamaño de fuente responsivo */
+    font-weight: 600;/* Peso de fuente */
+    cursor: pointer;/* Cursor puntero */
+    transition: var(--transition);/* Transición */
+    display: flex;/* Mostrar como flex */
+    align-items: center;/* Alinear elementos al centro */
+    justify-content: center;/* Justificar contenido al centro */
+    gap: 10px;/* Espacio entre elementos */
+}
+
+.calculate-btn:hover {/* Estilos al pasar el ratón */
+    transform: translateY(-2px);/* Mover hacia arriba */
+    box-shadow: var(--shadow-hover);/* Sombra al pasar el ratón */
+}
+
+.result-card {/* Tarjeta de resultados */
+    background: var(--background-secondary);/* Fondo secundario */
+    padding: clamp(20px, 4vw, 25px);/* Relleno responsivo */
+    border-radius: 8px;/* Borde redondeado */
+    margin-bottom: 30px;/* Margen inferior */
+}
+
+.result-item {/* Elemento de resultado */
+    display: flex;/* Mostrar como flex */
+    justify-content: space-between;/* Justificar contenido entre */
+    align-items: center;/* Alinear elementos al centro */
+    padding: 12px 0;/* Relleno vertical */
+    border-bottom: 1px solid var(--primary-light);/* Borde inferior */
+    flex-wrap: wrap;/* Permitir que los elementos se envuelvan */
+    gap: 10px;/* Espacio entre elementos */
+}
+
+.result-item:last-child {/* Último elemento de resultado */
+    border-bottom: none;/* Sin borde inferior */
+}
+
+.result-label {/* Etiqueta de resultado */
+    color: var(--text-primary);/* Color de texto principal */
+    font-weight: 500;/* Peso de fuente */
+    font-size: clamp(0.9rem, 2vw, 1rem);/* Tamaño de fuente responsivo */
+}
+
+.result-value {/* Valor de resultado */
+    color: var(--primary-light);/* Color primario claro */
+    font-weight: 600;/* Peso de fuente */
+    font-size: clamp(1rem, 2.5vw, 1.1rem);/* Tamaño de fuente responsivo */
+}
+
+.comparison-chart {/* Gráfico comparativo */
+    margin-top: 20px;/* Margen superior */
+}
+
+.comparison-chart h4 {/* Subtítulo del gráfico */
+    color: var(--primary-light);/* Color primario claro */
+    margin-bottom: 15px;/* Margen inferior */
+    text-align: center;/* Alineación centrada */
+    font-size: clamp(1rem, 2.5vw, 1.2rem);/* Tamaño de fuente responsivo */
+}
+
+/* === Layout tweaks to make calculator cards fully responsive and equal-height === */
+.calculator-container {
+    /* Start single column by default; switch to two columns on larger screens */
+    grid-template-columns: 1fr;/* Una columna por defecto */
+    gap: clamp(20px, 4vw, 32px);/*espacio entre columnas y filas*/
+    align-items: stretch;/* Alinear elementos al estirarse */
+    grid-auto-rows: 1fr;/* Filas automáticas iguales */
+}
+
+@media (min-width: 768px) {/* Pantallas medianas y más grandes */
+    .calculator-container {/*contenedor de la calculadora*/
+        grid-template-columns: 1fr 1fr;/* Dos columnas */
+    }
+}
+
+@media (min-width: 1200px) {/* Pantallas grandes */
+    .calculator-container {/*contenedor de la calculadora*/
+        max-width: 1200px;/* Ancho máximo */
+        margin-left: auto;/* Centrar horizontalmente */
+        margin-right: auto;/* Centrar horizontalmente */
+        gap: 40px;/* Espacio entre columnas y filas */
+    }
+}
+
+.calculator-form,
+.calculator-results {/*tarjetas de formulario y resultados*/
+    display: flex;/* Mostrar como flex */
+    flex-direction: column;/* Dirección de flexión en columna */
+    height: 100%;/* Altura completa */
+}
+
+.calculator-form .button-group {/* Contenedor de botones en el formulario */
+    margin-top: auto;/* margen superior automático */
+}
+
+.calculator-results .result-card {/* Tarjeta de resultados */
+    flex: 0 0 auto;/* No crecer ni encoger */
+}
+
+.calculator-results .comparison-chart {/* Gráfico comparativo */
+    flex: 1 1 auto;/* Permitir crecer y encoger */
+    display: flex;/* Mostrar como flex */
+    flex-direction: column;/* Dirección de flexión en columna */
+}
+
+.calculator-results .comparison-chart canvas {/* Lienzo del gráfico */
+    flex: 1 1 auto !important;/* Permitir crecer y encoger */
+    width: 100% !important;/* Ancho completo */
+    height: 100% !important;/* Altura completa */
+}
+
+@media (min-width: 1600px) {/* Pantallas muy grandes */
+    .calculator-form, .calculator-results { padding: 36px; }/* Relleno aumentado */
+}
+
+.calculator-container.compact .calculator-form .button-group {/* Contenedor de botones en modo compacto */
+    margin-top: 4px;/*margen superior pequeño*/
+}
+.calculator-container.compact .calculator-form .button-group {/*contenedor de botones en modo compacto*/
+    margin-top: 4px;/*margen superior pequeño*/
+}
+
+.calculator-container.compact .calculator-results .comparison-chart {/* Ocultar gráfico inicialmente en modo compacto */
+    height: 0;/* Altura cero */
+    overflow: hidden;/* Ocultar desbordamiento */
+}
+
+.calculator-container.compact .calculator-results .comparison-chart canvas {/* Lienzo del gráfico en modo compacto */
+    height: 0 !important;/* Altura cero */
+    opacity: 0;/* Opacidad cero */
+    visibility: hidden;/* Ocultar visibilidad */
+}
+.calculator-container.expanded .calculator-form .button-group {/* Contenedor de botones en modo expandido */
+    margin-top: auto;/* margen superior automático */
+}
+
+.calculator-container.expanded .calculator-results .comparison-chart {/* Mostrar gráfico al expandir */
+    height: auto;/* Altura automática */
+    max-height: 250px;/* Altura máxima */
+    overflow: auto;/* Permitir desplazamiento */
+}
+
+.calculator-container.expanded .calculator-results .comparison-chart canvas {/* Lienzo del gráfico al expandir */
+    height: 100% !important;/* Altura completa */
+    max-height: 250px !important;/* Altura máxima */
+    opacity: 1;/* Opacidad completa */
+    visibility: visible;/* Visibilidad visible */
+}
+
+.calculator-results .comparison-chart,
+.calculator-results .comparison-chart canvas {/* Transición para altura, opacidad y visibilidad */
+    transition: height 300ms ease, opacity 300ms ease, visibility 300ms ease;/* Transición */
+}
+
+/* Contenedor de botones */
+.button-group {
+    display: flex;/* Mostrar como flex */
+    gap: 12px;/* Espacio entre botones */
+    margin-bottom: 0;/* Margen inferior */
+}
+
+.button-group .calculate-btn {/* Botón Calcular */
+    flex: 1;/* Crecer para llenar el espacio */
+}
+
+/* Botón Limpiar */
+.clear-btn {
+    flex: 0 0 auto;/* No crecer ni encoger */
+    background: linear-gradient(135deg, #e74c3c, #c0392b);/* Fondo degradado */
+    color: var(--text-primary);/* Color de texto principal */
+    border: none;/* Sin borde */
+    padding: 15px 20px;/* Relleno */
+    border-radius: 8px;/* Bordes redondeados */
+    font-size: clamp(0.9rem, 2vw, 1rem);/* Tamaño de fuente adaptable */
+    font-weight: 600;/* Peso de fuente */
+    cursor: pointer;/* Cursor puntero */
+    transition: var(--transition);/* Transición */
+    display: flex;/* Mostrar como flex */
+    align-items: center;/* Alinear elementos al centro */
+    justify-content: center;/* Justificar contenido al centro */
+    gap: 8px;/* Espacio entre elementos */
+    min-width: 100px;/* Ancho mínimo */
+    white-space: nowrap;/* No permitir salto de línea */
+}
+
+.clear-btn:hover {/* Estilos al pasar el ratón */
+    transform: translateY(-2px);/* Mover hacia arriba */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);/* Sombra */
+    background: linear-gradient(135deg, #c0392b, #a93226);/* Fondo degradado */
+}
+
+.clear-btn:active {/* Estilos al hacer clic */
+    transform: translateY(0);/* Volver a posición original */
+}
+
+.clear-btn i {/* Icono dentro del botón */
+    font-size: 1em;/* Tamaño de fuente igual al del botón */
+}
+
+/* Animación de aparición y desaparición */
+.clear-btn {
+    animation: slideInLeft 0.3s ease;/* Animación de entrada */
+}
+
+@keyframes slideInLeft {/* Animación de entrada desde la izquierda */
+    from {/* Desde */
+        opacity: 0;/* Opacidad cero */
+        transform: translateX(-10px);/* Mover a la izquierda */
+    }
+    to {/* Hasta */
+        opacity: 1;/* Opacidad completa */
+        transform: translateX(0);/* Posición original */
+    }
+}
+
+.clear-btn.hide {/* Clase para ocultar con animación */
+    animation: slideOutLeft 0.3s ease;/* Animación de salida */
+}
+
+@keyframes slideOutLeft {/* Animación de salida hacia la izquierda */
+    from {/* Desde */
+        opacity: 1;/* Opacidad completa */
+        transform: translateX(0);/* Posición original */
+    }
+    to {/* Hasta */
+        opacity: 0;/* Opacidad cero */
+        transform: translateX(-10px);/* Mover a la izquierda */
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 640px) {/* Pantallas pequeñas */
+    .button-group {/*contenedor de botones*/
+        flex-direction: column;/* Dirección en columna */
+    }
+    
+    .button-group .calculate-btn {/* Botón Calcular */
+        width: 100%;/* Ancho completo */
+    }
+    
+    .clear-btn {/* Botón Limpiar */
+        width: 100%;/* Ancho completo */
+        min-width: auto;/* Ancho mínimo automático */
+    }
+}
+
+.calculate-btn.disabled-state {/*desactivado visual para el botón calcular (todavía clicable para mostrar alertas) */
+    opacity: 0.6;/* Opacidad reducida */
+    cursor: not-allowed;/* Cursor no permitido */
+    filter: grayscale(15%);/* Filtro de escala de grises */
+}
